@@ -1,0 +1,23 @@
+.cocktails-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cocktail-card {
+  height: 100px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border: 1px solid grey;
+}
+
+.img {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+}
+
+.cocktail-name {
+  width: 300px;
+}

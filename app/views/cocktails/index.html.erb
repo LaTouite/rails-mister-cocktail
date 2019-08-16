@@ -1,9 +1,19 @@
 <div class='banner' style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("http://maba.blog/wp-content/uploads/2019/05/Top-3-Bars-%C3%A0-cocktails-MABA-Blog.png");'>
-  <h1>Nos Cocktails</h1>
-</div>
-
-<% @cocktails.each do |cocktail| %>
   <div>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    <h1>Nos Cocktails</h1>
   </div>
-<% end %>
+</div>
+<div>
+  <%= link_to 'Ajoutez un nouveau cocktail',  new_cocktail_path %>
+</div>
+<div class='m-3 cocktails-container'>
+  <% @cocktails.each do |cocktail| %>
+    <div class='cocktail-card'>
+      <div class='img'>
+      </div>
+      <div class='cocktail-name'>
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    </div>
+  <% end %>
+</div>
