@@ -10,15 +10,24 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  border: 1px solid grey;
+  border: 1px solid #E0E0E0;
+  box-shadow: 1px 1px 12px #555;
 }
 
-.img {
-  background-color: red;
-  height: 100px;
-  width: 100px;
+.img-card {
+  height: 98px;
+  width: 98px;
 }
 
 .cocktail-name {
   width: 300px;
+}
+
+.cocktail-name-txt {
+  color: black;
+}
+
+.cocktail-name-txt:hover {
+  color: grey;
+  text-decoration: none;
 }

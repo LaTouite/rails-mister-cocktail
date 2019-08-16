@@ -1,9 +1,16 @@
-<h1>Add a new ingredient</h1>
+<div class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<% if @cocktail.photo? %><%= cl_image_path @cocktail.photo %><% else %><%= cl_image_path 'sample' %><% end %>')">
+  <div>
+    <h1>Add a new ingredient to the <%= @cocktail.name.capitalize %> recipe</h1>
+  </div>
+  <div class='mb-3'>
+    <%= link_to @cocktail.name.capitalize, cocktail_path(@cocktail), class:'btn btn-success'%>
+  </div>
+</div>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :ingredient_id, collection: Ingredient.all %>
-  <%= f.submit "add a dose", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to @cocktail.name, cocktail_path(@cocktail) %>
+<div class='container mt-3'>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :ingredient_id, collection: Ingredient.all %>
+    <%= f.submit "add a dose", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -1,18 +1,23 @@
 <div class='banner' style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("http://maba.blog/wp-content/uploads/2019/05/Top-3-Bars-%C3%A0-cocktails-MABA-Blog.png");'>
   <div>
-    <h1>Nos Cocktails</h1>
+    <h1 class='white-title'>My Cocktailz</h1>
   </div>
-</div>
-<div>
-  <%= link_to 'Ajoutez un nouveau cocktail',  new_cocktail_path %>
+  <div class='mb-3 add-cocktail-btn'>
+    <%= link_to 'Add your cocktail !', new_cocktail_path, class:'btn btn-success' %>
+  </div>
 </div>
 <div class='m-3 p-3 cocktails-container'>
   <% @cocktails.each do |cocktail| %>
     <div class='cocktail-card m-3'>
-      <div class='img'>
+      <div class='img-card'>
+        <% if cocktail.photo? %>
+          <%= cl_image_tag cocktail.photo, width: 98, height: 98, crop: :thumb %>
+        <% else %>
+          <%= cl_image_tag('sample', width: 98, height: 98, crop: :thumb) %>
+        <% end %>
       </div>
-      <div class='cocktail-name'>
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <div class='p-3 cocktail-name'>
+        <%= link_to cocktail.name.capitalize, cocktail_path(cocktail), class:'cocktail-name-txt'%>
       </div>
     </div>
   <% end %>
