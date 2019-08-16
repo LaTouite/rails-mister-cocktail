@@ -1,0 +1,9 @@
+<div class='banner' style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("http://maba.blog/wp-content/uploads/2019/05/Top-3-Bars-%C3%A0-cocktails-MABA-Blog.png");'>
+  <h1>Nos Cocktails</h1>
+</div>
+
+<% @cocktails.each do |cocktail| %>
+  <div>
+    <%= link_to cocktail.name, cocktail_path(cocktail) %>
+  </div>
+<% end %>
