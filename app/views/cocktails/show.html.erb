@@ -1,14 +1,16 @@
-<h1><%= @cocktail.name %></h1>
+<div class='banner' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<% if @cocktail.photo? %><%= cl_image_path @cocktail.photo %><% else %><%= cl_image_path 'a0umjmqpmxwpwt2pl8si' %><% end %>')">
+  <h1 class='white-title'><%= @cocktail.name.capitalize %></h1>
+</div>
 
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-
-<% @cocktail.doses.each do |dose| %>
-  <div><%= dose.ingredient.name %><span>: </span><%= dose.description %>
-  <%= link_to "Delete", dose_path(dose),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-  </div>
-<% end %>
+<div class='m-2'>
+  <% @cocktail.doses.each do |dose| %>
+    <div><%= dose.ingredient.name %><span>: </span><%= dose.description %>
+    <%= link_to "Delete", dose_path(dose),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+    </div>
+  <% end %>
+</div>
 
 <div class='m-2'><%= link_to "Add a new ingredient", new_cocktail_dose_path(@cocktail), class:'btn btn-primary rounded' %></div>
 <div class='m-2'><%= link_to "Nos cocktails", cocktails_path, class:'btn btn-primary rounded' %></div>

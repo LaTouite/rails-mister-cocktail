@@ -1,10 +1,6 @@
-<div class='banner' style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("http://maba.blog/wp-content/uploads/2019/05/Top-3-Bars-%C3%A0-cocktails-MABA-Blog.png");'>
-  <div>
-    <h1 class='white-title'>My Cocktailz</h1>
-  </div>
-  <div class='mb-3 add-cocktail-btn'>
-    <%= link_to 'Add your cocktail !', new_cocktail_path, class:'btn btn-success' %>
-  </div>
+<div class='banner index-banner' style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("http://maba.blog/wp-content/uploads/2019/05/Top-3-Bars-%C3%A0-cocktails-MABA-Blog.png");'>
+    <h1 class='white-title index-title'>My Cocktailz</h1>
+    <%= link_to 'Add your cocktail !', new_cocktail_path, class:'btn index-button' %>
 </div>
 <div class='m-3 p-3 cocktails-container'>
   <% @cocktails.each do |cocktail| %>
@@ -13,7 +9,7 @@
         <% if cocktail.photo? %>
           <%= cl_image_tag cocktail.photo, width: 98, height: 98, crop: :thumb %>
         <% else %>
-          <%= cl_image_tag('sample', width: 98, height: 98, crop: :thumb) %>
+          <%= cl_image_tag('a0umjmqpmxwpwt2pl8si', width: 98, height: 98, crop: :thumb) %>
         <% end %>
       </div>
       <div class='p-3 cocktail-name'>

@@ -1,14 +1,40 @@
 .banner {
-  background-repeat: no-repeat fixed;
   background-size: cover;
+  background-repeat: no-repeat fixed;
   height: 400px;
-  background-position: 0px -180px;
   color: white;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-banner {
+  background-position: 0px -180px;
   flex-direction: column;
-  justify-content: space-between;
+  align-content: center;
 }
 
 .add-cocktail-btn {
   text-align: center;
+}
+
+.white-title {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 200px;
+  line-height: 200px;
+  opacity: 0.7;
+  margin: 0px;
+}
+
+.index-button {
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+
+.index-button:hover {
+  opacity: 0.8;
+  box-shadow: 2px 2px 12px #000000;
 }
