@@ -1,11 +1,17 @@
-<div class='container mt-3'>
-  <h1>Add a new cocktail</h1>
+<div class='new-navbar'>
+  <div class='div-link'>
+    <%= link_to '', cocktails_path, class:'fas fa-home menu-link'%>
+  </div>
+</div>
+
+<div class='banner add-banner' style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("https://www.maxim.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTUwODg5MTM1MDY0NzU0MDA5/cocktails-promo.webp");'>
+    <h1 class='white-title index-title'>Add a new cocktail</h1>
+</div>
+<div class='container mt-4'>
   <%= simple_form_for [@cocktail] do |f| %>
     <%= f.input :name %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+    <%= f.submit "add your cocktail", class: "btn btn-primary rounded" %>
   <% end %>
-
-  <div><%= link_to "Nos cocktails", cocktails_path %></div>
 </div>
